@@ -6,7 +6,7 @@ import React from 'react';
 export default abstract class BaseModule extends React.Component<any, any>
 {
     /**
-     * Properties defined by parent module
+     * Properties defined by child module
      */
     public props = {};
 
