@@ -5,25 +5,25 @@ import React from 'react';
  */
 export default abstract class BaseModule extends React.Component<any, any>
 {
-    /**
-     * Properties defined by child module
-     */
-    public props = {};
+	/**
+	 * Properties defined by child module
+	 */
+	public props = {};
 
-    /**
-     * Rules for all properties
-     */
-    protected propsRules: {[key: string]: IPropertyRule } = {};
+	/**
+	 * Rules for all properties
+	 */
+	protected propsRules: {[key: string]: IPropertyRule } = {};
 }
 
 export interface IPropertyRule
 {
-    required?: boolean,
-    editable?: boolean,
+	required?: boolean,
+	editable?: boolean,
 }
 
 export class DefaultPropertyRule implements IPropertyRule
 {
-    public required = false;
-    public editable = true;
+	public required = false;
+	public editable = true;
 }

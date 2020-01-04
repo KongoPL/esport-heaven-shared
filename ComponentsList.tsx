@@ -2,7 +2,7 @@ import ContentBox from "./ContentBox/ContentBox";
 
 
 const ComponentsList = {
-    ContentBox: ContentBox
+	ContentBox: ContentBox
 };
 
 export default ComponentsList;
