@@ -12,8 +12,27 @@ export default abstract class BaseModule extends React.Component<any, any>
 
 	/**
 	 * Rules for all properties
+	 *
+	 * @type IPropertyRules
 	 */
-	protected propsRules: {[key: string]: IPropertyRule } = {};
+	public propsRules: IPropertyRules = {};
+
+	constructor(props)
+	{
+		super(props);
+
+		for(let propName in this.props)
+		{
+			const defaultProperty = {...DefaultPropertyRule},
+				data = this.propsRules[propName] || {};
+
+			this.propsRules[propName] = {...defaultProperty, ...data};
+		}
+	}
+}
+
+export interface IPropertyRules {
+	[key: string]: IPropertyRule
 }
 
 export interface IPropertyRule
@@ -22,8 +41,8 @@ export interface IPropertyRule
 	editable?: boolean,
 }
 
-export class DefaultPropertyRule implements IPropertyRule
+export const DefaultPropertyRule: IPropertyRule =
 {
-	public required = false;
-	public editable = true;
-}
+	required: false,
+	editable: true
+};
