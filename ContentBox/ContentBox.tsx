@@ -1,5 +1,6 @@
 import BaseModule, {IPropertyRules} from "../BaseModule/BaseModule";
 import React from "react";
+import * as Yup from "yup";
 
 export default class ContentBox extends BaseModule
 {
@@ -10,7 +11,10 @@ export default class ContentBox extends BaseModule
 	propsRules: IPropertyRules = {
 		content: {
 			required: true,
-			editable: true
+			editable: true,
+			validation: Yup.string()
+				.min(5, 'Minimum 5 characters long!')
+				.required('Required')
 		}
 	};
 
