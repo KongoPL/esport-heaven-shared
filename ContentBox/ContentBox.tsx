@@ -10,7 +10,6 @@ export default class ContentBox extends BaseModule
 
 	propsRules: IPropertyRules = {
 		content: {
-			required: true,
 			editable: true,
 			validation: Yup.string()
 				.min(5, 'Minimum 5 characters long!')

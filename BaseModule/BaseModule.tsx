@@ -37,13 +37,11 @@ export interface IPropertyRules {
 
 export interface IPropertyRule
 {
-	required?: boolean,
 	editable?: boolean,
 	validation?: any // Yup object
 }
 
 export const DefaultPropertyRule: IPropertyRule =
 {
-	required: false,
-	editable: true
+	editable: true,
 };
