@@ -61,7 +61,7 @@ export default class Grid extends BaseLayout
 		{
 			let children = this.props.gridChildren[areaName];
 
-			content.push(<div style={{gridArea: areaName}}>{children}</div>);
+			content.push(<div key={areaName} style={{gridArea: areaName}}>{children}</div>);
 		}
 
 		return content;
