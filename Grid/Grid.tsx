@@ -10,7 +10,7 @@ export default class Grid extends BaseLayout
 		rowSizes: [],
 		areas: [],
 
-		gridChildren: {}
+		gridChildren: {},
 	};
 
 	render()
@@ -59,9 +59,13 @@ export default class Grid extends BaseLayout
 
 		for(let areaName in this.props.gridChildren)
 		{
-			let children = this.props.gridChildren[areaName];
+			let children = this.props.gridChildren[areaName],
+				areaStyle = {
+					gridArea: areaName,
+					width: '100%',
+				};
 
-			content.push(<div key={areaName} style={{gridArea: areaName}}>{children}</div>);
+			content.push(<div key={areaName} style={areaStyle}>{children}</div>);
 		}
 
 		return content;
@@ -82,7 +86,7 @@ interface IGridProps
 	 * key is area name, value is area's children
 	 * (any valid react children - string/JSX.Element/JSX.Element[] etc.)
 	 */
-	gridChildren?: {[key: string]: any}
+	gridChildren?: {[key: string]: any},
 }
 
 export interface IArea
